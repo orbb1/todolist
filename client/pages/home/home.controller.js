@@ -9,6 +9,7 @@ class HomeController {
                         create: 'today',
                         due: 'tomorrow',
                         person: 'Bauyrzhan',
+                        complete: false,
                         comments: [
                             { 
                                 author: 'Bauyrzhan',
@@ -20,6 +21,7 @@ class HomeController {
                         create: 'today',
                         due: 'tomorrow',
                         person: 'Bauyrzhan',
+                        complete: false,
                         comments: [
                             // { 
                             //     author: 'Bauyrzhan',
@@ -36,6 +38,7 @@ class HomeController {
                         create: 'today',
                         due: 'tomorrow',
                         person: 'Maxim',
+                        complete: false,
                         comments: [
                             { 
                                 author: 'Maxim',
@@ -47,6 +50,12 @@ class HomeController {
             },
             
         ];
+        this.move = this.move.bind(this);
+    }
+    move = (todo, oldGroup, newGroup) => {
+        var index = oldGroup.tasks.indexOf(todo);
+        newGroup.tasks.push(todo);
+        oldGroup.tasks.splice(index, 1);
     }
 }
 

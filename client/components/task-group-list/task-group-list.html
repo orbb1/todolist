@@ -1,4 +1,7 @@
-<div>
-    <h2>task list</h2>
-    <task-group ng-repeat="taskGroup in $ctrl.taskGroups" task-group="taskGroup"></task-group>
+<h2>task list</h2>
+<div class="row">
+        <task-group ng-repeat="taskGroup in $ctrl.taskGroups" 
+        move="$ctrl.move"
+        task-groups="$ctrl.taskGroups"
+        task-group="taskGroup"></task-group>
 </div>
