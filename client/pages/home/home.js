@@ -2,10 +2,10 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import homeComponent from './home.component';
 import homeConfig from './home.config';
-import taskListModule from '../../components/task-list/task-list';
+import taskGroupListModule from '../../components/task-group-list/task-group-list';
 
 let homeModule = angular.module('pages.home', [
-    taskListModule,
+    taskGroupListModule,
     uiRouter
 ]).component('home', homeComponent)
 .config(homeConfig)

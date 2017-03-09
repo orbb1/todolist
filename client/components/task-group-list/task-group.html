@@ -1,0 +1,5 @@
+<h3>{{$ctrl.taskGroup.groupName}}</h3>
+<div ng-repeat="task in $ctrl.taskGroup.tasks">
+    <p>{{task.taskName}}</p>
+    <p ng-if="task.comments.length">comments...</p>
+</div>

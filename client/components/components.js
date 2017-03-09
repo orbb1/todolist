@@ -1,8 +1,8 @@
 import angular from 'angular';
-import taskListModule from './task-list/task-list';
+import taskGroupListModule from './task-group-list/task-group-list';
 
 let componentsModule = angular.module('components', [
-    taskListModule
+    taskGroupListModule
 ]).name;
 
 export default componentsModule;
