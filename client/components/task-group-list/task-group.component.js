@@ -5,7 +5,8 @@ let taskGroupComponent = {
     bindings: {
         taskGroups: '=',
         taskGroup: '=',
-        move: '='
+        move: '=',
+        tasks: '='
     }
 }
 

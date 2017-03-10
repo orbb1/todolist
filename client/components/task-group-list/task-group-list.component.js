@@ -4,7 +4,8 @@ let taskGroupListComponent = {
     template,
     bindings: {
         taskGroups: '=',
-        move: '='
+        move: '=',
+        tasks: '='
     }
 };
 

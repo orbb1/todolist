@@ -1,11 +1,10 @@
 class HomeController {
     constructor() {
-        this.taskGroups = [
-            {
-                groupName: 'Old Group',
-                tasks: [
+        this.taskGroups = [ 'Old Group','New Group']
+        this.tasks = [
                     {
                         taskName: 'Old task',
+                        group: 'Old Group',
                         create: 'today',
                         due: 'tomorrow',
                         person: 'Bauyrzhan',
@@ -18,6 +17,7 @@ class HomeController {
                         ]
                     }, {
                         taskName: 'Very Old task',
+                        group: 'New Group',
                         create: 'today',
                         due: 'tomorrow',
                         person: 'Bauyrzhan',
@@ -28,13 +28,9 @@ class HomeController {
                             //     comment: 'pozhrat samsa' 
                             // }
                         ]
-                    }
-                ]
-            }, {
-                groupName: 'New Group',
-                tasks: [
-                    {
+                    }, {
                         taskName: 'New task',
+                        group: 'New Group',
                         create: 'today',
                         due: 'tomorrow',
                         person: 'Maxim',
@@ -46,10 +42,7 @@ class HomeController {
                             }
                         ]
                     }
-                ]
-            },
-            
-        ];
+                ];
         this.move = this.move.bind(this);
     }
     move = (todo, oldGroup, newGroup) => {

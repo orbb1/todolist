@@ -1,12 +1,14 @@
 <div class="col-sm-3">
-    <h3>{{$ctrl.taskGroup.groupName}}</h3>
-    <div ng-repeat="task in $ctrl.taskGroup.tasks">
+    <h3>{{$ctrl.taskGroup}}</h3>
+    <div ng-repeat="task in $ctrl.tasks | filter: { group: $ctrl.taskGroup } track by $index">
         <h4>{{task.taskName}}</h4>
         <p ng-if="task.comments.length">comments...</p>
         <button class="btn btn-primary" ng-click="task.complete = !task.complete">V</button>
-        <button class="btn btn-primary" ng-click="$ctrl.move(task, $ctrl.taskGroups[0], $ctrl.taskGroups[1])">move to 2</button>
-        <button class="btn btn-primary" ng-click="$ctrl.move(task, $ctrl.taskGroups[1], $ctrl.taskGroups[0])">move to 1</button>
         <p ng-if="task.complete">task completed</p>
         <hr>
+        <label for="move">Move to:</label>
+        <select class="form-control" id="move" ng-model="task.group">
+            <option ng-repeat="taskGroup in $ctrl.taskGroups">{{taskGroup}}</option>
+        </select>
     </div>
 </div>
