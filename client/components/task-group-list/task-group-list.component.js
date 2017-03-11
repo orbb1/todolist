@@ -5,7 +5,9 @@ let taskGroupListComponent = {
     bindings: {
         taskGroups: '=',
         move: '=',
-        tasks: '='
+        tasks: '=',
+        getNewId: '&',
+        addTask: '='
     }
 };
 

@@ -6,7 +6,9 @@ let taskGroupComponent = {
         taskGroups: '=',
         taskGroup: '=',
         move: '=',
-        tasks: '='
+        tasks: '=',
+        getNewId: '&',
+        addTask: '='
     }
 }
 

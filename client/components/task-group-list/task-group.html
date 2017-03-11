@@ -9,12 +9,12 @@
         <select class="form-control" id="move" ng-model="task.group">
             <option ng-repeat="taskGroup in $ctrl.taskGroups">{{taskGroup}}</option>
         </select>
+        <p>{{task.taskId}}</p>
         <hr>
     </div>
     <div ng-if="$ctrl.showNewTaskInput">
         <input type="text" ng-maxlength="20" ng-model="newTaskName">
-        <button class="btn btn-primary" ng-click="$ctrl.tasks.push({taskName: newTaskName,
-                        group: $ctrl.taskGroup})">+</button>
+        <button class="btn btn-primary" ng-click="$ctrl.addTask(newTaskName, $ctrl.taskGroup)">+</button>
     </div>
     <button class="btn btn-primary" ng-click="$ctrl.showNewTaskInput = !$ctrl.showNewTaskInput">Add task</button>
 </div>
