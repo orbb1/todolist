@@ -6,7 +6,7 @@ let homeComponent = {
     template,
     controller,
     bindings: {
-        taskGrousp: "<"
+        tasks: '='
     }
 };
 

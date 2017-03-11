@@ -1,7 +1,7 @@
 <div class="col-sm-3">
     <h3>{{$ctrl.taskGroup}}</h3>
     <div ng-repeat="task in $ctrl.tasks | filter: { group: $ctrl.taskGroup } track by $index">
-        <h4>{{task.taskName}}</h4>
+        <h4 ui-sref="app.task({id: task.taskId})">{{task.taskName}}</h4>
         <p ng-if="task.comments.length">comments...</p>
         <button class="btn btn-primary" ng-click="task.complete = !task.complete">Complete</button>
         <p ng-if="task.complete">task completed</p>
