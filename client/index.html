@@ -1,20 +1,37 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>ToDo list</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="description" content="https://github.com/orbb1">
-    <base href="/">
-  </head>
-  <body ng-app="app" ng-strict-di ng-cloak>
 
-    <app>
-      Loading...
-    </app>
+<head>
+  <meta charset="utf-8">
+  <title>ToDo list</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="description" content="https://github.com/orbb1">
+  <base href="/">
+</head>
 
-  </body>
+<body ng-app="app" ng-strict-di ng-cloak>
+
+  <app>
+    Loading...
+  </app>
+  <!--Firebase code-->
+  <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAr8oMrGNq_FMG1Cor48BuQo9gBUrzOFz8",
+      authDomain: "fftodolist.firebaseapp.com",
+      databaseURL: "https://fftodolist.firebaseio.com",
+      storageBucket: "fftodolist.appspot.com",
+      messagingSenderId: "251305558352"
+    };
+    firebase.initializeApp(config);
+
+  </script>
+  <!--end of Firebase code-->
+</body>
+
 </html>

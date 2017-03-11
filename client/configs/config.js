@@ -24,10 +24,10 @@ export const tasks = [
                 person: 'Bauyrzhan',
                 complete: false,
                 comments: [
-                    // { 
-                    //     author: 'Bauyrzhan',
-                    //     comment: 'pozhrat samsa' 
-                    // }
+                    { 
+                        author: 'Bauyrzhan',
+                        comment: 'pozhrat samsa' 
+                    }
                 ]
             }, {
                 taskName: 'New task',
