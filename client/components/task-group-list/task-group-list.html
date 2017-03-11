@@ -1,8 +1,12 @@
 <h2>task list</h2>
 <div class="row">
-        <task-group ng-repeat="taskGroup in $ctrl.taskGroups" 
-        move="$ctrl.move"
-        task-groups="$ctrl.taskGroups"
-        task-group="taskGroup"
-        tasks="$ctrl.tasks"></task-group>
+        <task-group ng-repeat="taskGroup in $ctrl.taskGroups track by $index" move="$ctrl.move" task-groups="$ctrl.taskGroups" task-group="taskGroup"
+                tasks="$ctrl.tasks"></task-group>
+                <div class="col-sm-3">
+                        <div ng-if="$ctrl.showInput">
+                                <input type="text" ng-maxlength="20" ng-model="newGroupName">
+                                <button class="btn btn-primary" ng-click="$ctrl.taskGroups.push(newGroupName)">+</button>
+                        </div>
+                        <button class="btn btn-primary" ng-click="$ctrl.showInput = !$ctrl.showInput">Add group</button>
+                </div>
 </div>

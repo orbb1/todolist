@@ -3,7 +3,7 @@
     <div ng-repeat="task in $ctrl.tasks | filter: { group: $ctrl.taskGroup } track by $index">
         <h4>{{task.taskName}}</h4>
         <p ng-if="task.comments.length">comments...</p>
-        <button class="btn btn-primary" ng-click="task.complete = !task.complete">V</button>
+        <button class="btn btn-primary" ng-click="task.complete = !task.complete">Complete</button>
         <p ng-if="task.complete">task completed</p>
         <hr>
         <label for="move">Move to:</label>
@@ -11,4 +11,10 @@
             <option ng-repeat="taskGroup in $ctrl.taskGroups">{{taskGroup}}</option>
         </select>
     </div>
+    <div ng-if="$ctrl.showNewTaskInput">
+        <input type="text" ng-maxlength="20" ng-model="newTaskName">
+        <button class="btn btn-primary" ng-click="$ctrl.tasks.push({taskName: newTaskName,
+                        group: $ctrl.taskGroup})">+</button>
+    </div>
+    <button class="btn btn-primary" ng-click="$ctrl.showNewTaskInput = !$ctrl.showNewTaskInput">Add task</button>
 </div>
