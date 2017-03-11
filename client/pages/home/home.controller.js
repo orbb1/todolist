@@ -2,7 +2,6 @@ class HomeController {
     constructor() {
         this.getNewId = this.getNewId.bind(this);
         this.addTask = this.addTask.bind(this);
-        this.taskGroups = ['Old Group', 'New Group']
     }
 
     getNewId = () => {

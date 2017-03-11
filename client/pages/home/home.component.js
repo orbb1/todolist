@@ -6,7 +6,8 @@ let homeComponent = {
     template,
     controller,
     bindings: {
-        tasks: '='
+        tasks: '=',
+        taskGroups: '='
     }
 };
 

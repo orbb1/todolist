@@ -1,10 +1,12 @@
-import { tasks } from '../configs/config';
+import { tasks, taskGroups } from '../configs/config';
 
 class TaskService {
     constructor() {
         this.tasks = tasks;
+        this.taskGroups = taskGroups;
         this.getTasks = this.getTasks.bind(this);
         this.getTask = this.getTask.bind(this);
+        this.getTaskGroups = this.getTaskGroups.bind(this);
     }
     getTasks = () => this.tasks;
     
@@ -17,7 +19,9 @@ class TaskService {
             taskowski = task;
         });
         return taskowski;
-    }
+    };
+
+    getTaskGroups = () => this.taskGroups;
 }
 
 export default TaskService;

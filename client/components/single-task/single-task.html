@@ -25,3 +25,9 @@
             <option ng-repeat="priorityLevel in $ctrl.priorities">{{priorityLevel}}</option>
         </select>
 </div>
+<div>
+    <label for="group">Change group</label>
+        <select id="group" ng-model="$ctrl.task.group">
+            <option ng-repeat="group in $ctrl.taskGroups">{{group}}</option>
+        </select>
+</div>

@@ -5,7 +5,8 @@ let singleTaskComponent = {
     bindings: {
         task: '=',
         addComent: '=',
-        priorities: '<'
+        priorities: '<',
+        taskGroups: '<'
     }
 }
 

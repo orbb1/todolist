@@ -5,7 +5,8 @@ let taskViewComponent = {
     controller,
     template,
     bindings: {
-        task: '='
+        task: '=',
+        taskGroups: '<'
     }
 }
 

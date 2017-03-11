@@ -46,3 +46,5 @@ export const tasks = [
                 ]
             }
         ];
+
+export const taskGroups = ['Old Group', 'New Group'];

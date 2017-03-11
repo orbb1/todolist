@@ -7,6 +7,9 @@ export default ($stateProvider) => {
             resolve: {
                 tasks: (TaskService) => {
                     return TaskService.getTasks()
+                },
+                taskGroups: (TaskService) => {
+                    return TaskService.getTaskGroups();
                 }
             }
         });
