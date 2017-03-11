@@ -1,15 +1,16 @@
-<div class="col-sm-3">
-    <h3>{{$ctrl.taskGroup}}</h3>
-    <div ng-repeat="task in $ctrl.tasks | filter: { group: $ctrl.taskGroup } track by $index">
-        <h4 ui-sref="app.task({id: task.taskId})">{{task.taskName}}</h4>
-        <p ng-if="task.comments.length">comments...</p>
-        <button class="btn btn-primary" ng-click="task.complete = !task.complete">Complete</button>
-        <p ng-if="task.complete">task completed</p>
+<div class="col-sm-3 TaskGroupList-Tile">
+    <h3 class="text-center">{{$ctrl.taskGroup}}</h3>
+    <div class="TaskGroup-Task" ng-repeat="task in $ctrl.tasks | filter: { group: $ctrl.taskGroup } track by $index">
+        <h4 class="TaskGroup-TaskName" ui-sref="app.task({id: task.taskId})">{{task.taskName}}</h4>
+        <div>
+            <button class="btn btn-primary" ng-click="task.complete = !task.complete">Complete</button>
+            <p ng-if="task.complete">task completed</p>
+        </div>
         <label for="move">Move to:</label>
         <select class="form-control" id="move" ng-model="task.group">
             <option ng-repeat="taskGroup in $ctrl.taskGroups">{{taskGroup}}</option>
         </select>
-        <p>{{task.taskId}}</p>
+        <p ng-if="task.comments.length">comments...</p>
         <hr>
     </div>
     <div ng-if="$ctrl.showNewTaskInput">
