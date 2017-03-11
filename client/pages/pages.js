@@ -1,6 +1,6 @@
 import angular from 'angular';
 import homeModule from './home/home';
-import taskViewModule from './single-task/task-view';
+import taskViewModule from './task-view/task-view';
 
 let pagesModule = angular.module('pages', [
     taskViewModule,

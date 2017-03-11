@@ -5,6 +5,7 @@ export const tasks = [
                 group: 'Old Group',
                 create: 'today',
                 due: 'tomorrow',
+                priority: 'high',
                 person: 'Bauyrzhan',
                 complete: false,
                 comments: [
@@ -19,6 +20,7 @@ export const tasks = [
                 group: 'New Group',
                 create: 'today',
                 due: 'tomorrow',
+                priority: 'high',
                 person: 'Bauyrzhan',
                 complete: false,
                 comments: [
@@ -33,6 +35,7 @@ export const tasks = [
                 group: 'New Group',
                 create: 'today',
                 due: 'tomorrow',
+                priority: 'high',
                 person: 'Maxim',
                 complete: false,
                 comments: [

@@ -1,0 +1,27 @@
+<h2>single task component</h2>
+<button class="btn btn-danger" ng-click="$ctrl.edition = !$ctrl.edition">Edit</button>
+<p>{{$ctrl.task}}</p>
+<input type="text" ng-model="$ctrl.task.taskName" ng-disabled="!$ctrl.edition">
+<p>{{$ctrl.task.create}}</p>
+<input type="datetime" ng-model="$ctrl.task.due" ng-disabled="!$ctrl.edition">
+<p>Person: {{$ctrl.task.person}}</p>
+<button class="btn btn-primary" ng-click="$ctrl.task.complete = !$ctrl.task.complete">V</button>
+<p ng-if="$ctrl.task.complete">task completed</p>
+<p>Comments: </p>
+<div ng-repeat="comment in $ctrl.task.comments track by $index">
+    <p>Author: {{comment.author}}</p>
+    <p>Comment: {{comment.comment}}</p>
+</div>
+<button class="btn btn-primary" ng-click="$ctrl.toComment = !$ctrl.toComment">Add comment</button>
+<div ng-if="$ctrl.toComment">
+    <p>From: <input type="text" ng-model="commentAuthor"></p>
+    <p>Comment: <input type="text" ng-model="commentText"></p>
+    <button class="btn btn-primary" ng-click="$ctrl.addComent(commentAuthor, commentText)">+</button>
+</div>
+<div>
+    <p>Priority: {{$ctrl.task.priority}}</p>
+    <label for="priority">Set priority:</label>
+        <select id="priority" ng-model="$ctrl.task.priority">
+            <option ng-repeat="priorityLevel in $ctrl.priorities">{{priorityLevel}}</option>
+        </select>
+</div>
