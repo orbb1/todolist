@@ -2,10 +2,11 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 body {
+    margin-left: calc(100vw - 100%);
     height: 100vh;
     background: no-repeat center #7ae2cf;
-background: no-repeat center -webkit-linear-gradient(bottom left, #7ae2cf 0%, #48bace 40%, #035c66 100%);
-background: no-repeat center -o-linear-gradient(bottom left, #7ae2cf 0%, #48bace 40%, #035c66 100%);
-background: no-repeat center linear-gradient(to top right, #7ae2cf 0%, #48bace 40%, #035c66 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7ae2cf', endColorstr='#035c66',GradientType=1 );
+background: no-repeat center -webkit-linear-gradient(bottom left, #7ae2cf 0%, #48bace 40%, #035c66 100%) fixed;
+background: no-repeat center -o-linear-gradient(bottom left, #7ae2cf 0%, #48bace 40%, #035c66 100%) fixed;
+background: no-repeat center linear-gradient(to top right, #7ae2cf 0%, #48bace 40%, #035c66 100%) fixed;
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7ae2cf', endColorstr='#035c66',GradientType=1 ) fixed;
 }

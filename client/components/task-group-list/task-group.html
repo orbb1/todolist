@@ -7,7 +7,7 @@
             <p>
                 <i class="cursor-pointer fa fa-2x" ng-class="{ 'fa-square-o': !task.complete, 'fa-check-square-o': task.complete }" ng-click="task.complete = !task.complete"
                     aria-hidden="true"></i>
-                    <span class="TaskGroup-TaskName cursor-pointer" ui-sref="app.task({id: task.taskId})">{{task.taskName}}</span>
+                    <span class="TaskGroup-TaskName cursor-pointer" ui-sref="app.task({id:task.taskId})">{{task.taskName}}</span>
             </p>
         </div>
         <label>Move to:</label>

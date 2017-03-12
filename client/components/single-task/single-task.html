@@ -1,33 +1,59 @@
-<h2>single task component</h2>
-<button class="btn btn-danger" ng-click="$ctrl.edition = !$ctrl.edition">Edit</button>
-<p>{{$ctrl.task}}</p>
-<input type="text" ng-model="$ctrl.task.taskName" ng-disabled="!$ctrl.edition">
-<p>{{$ctrl.task.create}}</p>
-<input type="datetime" ng-model="$ctrl.task.due" ng-disabled="!$ctrl.edition">
-<p>Person: {{$ctrl.task.person}}</p>
-<button class="btn btn-primary" ng-click="$ctrl.task.complete = !$ctrl.task.complete">V</button>
-<p ng-if="$ctrl.task.complete">task completed</p>
-<p>Comments: </p>
-<div ng-repeat="comment in $ctrl.task.comments track by $index">
-    <p>Author: {{comment.author}}</p>
-    <p>Comment: {{comment.comment}}</p>
-</div>
-<button class="btn btn-primary" ng-click="$ctrl.toComment = !$ctrl.toComment">Add comment</button>
-<div ng-if="$ctrl.toComment">
-    <p>From: <input type="text" ng-model="commentAuthor"></p>
-    <p>Comment: <input type="text" ng-model="commentText"></p>
-    <button class="btn btn-primary" ng-click="$ctrl.addComent(commentAuthor, commentText)">+</button>
-</div>
-<div>
-    <p>Priority: {{$ctrl.task.priority}}</p>
-    <label for="priority">Set priority:</label>
-        <select id="priority" ng-model="$ctrl.task.priority">
-            <option ng-repeat="priorityLevel in $ctrl.priorities">{{priorityLevel}}</option>
-        </select>
-</div>
-<div>
-    <label for="group">Change group</label>
-        <select id="group" ng-model="$ctrl.task.group">
-            <option ng-repeat="group in $ctrl.taskGroups">{{group}}</option>
-        </select>
+<div class="container">
+    <h2>single task component</h2>
+    <div class="SingleTaks-TaskContainer">
+        <div>
+            <button class="btn btn-danger pull-right" ng-click="$ctrl.edition = !$ctrl.edition">Edit</button>
+        </div>
+        <p>
+            <i class="cursor-pointer fa fa-2x" ng-class="{ 'fa-square-o': !$ctrl.task.complete, 'fa-check-square-o': $ctrl.task.complete }"
+                ng-click="$ctrl.task.complete = !$ctrl.task.complete" aria-hidden="true"></i>
+                <input class="SingleTaks-TaskName" ng-class="{'EditionInput' : !$ctrl.edition}" type="text" ng-model="$ctrl.task.taskName" ng-disabled="!$ctrl.edition">
+        </p>
+        <div class="row">
+            <div class="col-sm-5">
+                <p>Create: <strong>{{$ctrl.task.create}}</strong></p>
+                <p>Due to: <strong>{{$ctrl.task.due | date:'fullDate'}}</strong></p>
+                <p>Priority: <strong>{{$ctrl.task.priority}}</strong></p>
+                <p>
+                    <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                    <input ng-class="{'EditionInput' : !$ctrl.edition}" type="text" ng-model="$ctrl.task.person" ng-disabled="!$ctrl.edition">
+                </p>
+            </div>
+            <div class="col-sm-7 row" ng-if="$ctrl.edition">
+                <div class="col-sm-6"> 
+                    <label for="priority">Set priority:</label>
+                    <select class="form-control" id="priority" ng-model="$ctrl.task.priority">
+                        <option ng-repeat="priorityLevel in $ctrl.priorities">{{priorityLevel}}</option>
+                    </select>
+                </div>
+               <div class="col-sm-6">
+                <label for="group">Change group</label>
+                <select class="form-control" id="group" ng-model="$ctrl.task.group">
+                    <option ng-repeat="group in $ctrl.taskGroups">{{group}}</option>
+                </select>
+                </div>
+                <div class="DatePicker col-sm-12">
+                    <p>Change due date: </p>
+                    <div uib-datepicker ng-model="$ctrl.task.due"></div>
+                </div>
+            </div>
+
+        </div>
+        <hr>
+        <div>
+            <p>Comments: </p>
+            <div ng-repeat="comment in $ctrl.task.comments track by $index">
+                <p><i class="fa fa-user" aria-hidden="true"></i> {{comment.author}}:</p>
+                <p class="SingleTask-CommentBox"><i class="fa fa-comments" aria-hidden="true"></i> {{comment.comment}}</p>
+            </div>
+            <button class="btn btn-primary" ng-click="$ctrl.toComment = !$ctrl.toComment">Add comment
+            <i class="fa fa-comments" aria-hidden="true"></i>
+        </button>
+        </div>
+        <div ng-if="$ctrl.toComment">
+            <p>From: <input type="text" ng-model="commentAuthor"></p>
+            <p>Comment: <input type="text" ng-model="commentText"></p>
+            <button class="btn btn-primary" ng-click="$ctrl.addComent(commentAuthor, commentText)">Submit</button>
+        </div>
+    </div>
 </div>
