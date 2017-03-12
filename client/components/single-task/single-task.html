@@ -1,11 +1,10 @@
 <div class="container">
-    <h2>single task component</h2>
     <div class="SingleTaks-TaskContainer">
         <div>
             <button class="btn btn-danger pull-right" ng-click="$ctrl.edition = !$ctrl.edition">Edit</button>
         </div>
         <p>
-            <i class="cursor-pointer fa fa-2x" ng-class="{ 'fa-square-o': !$ctrl.task.complete, 'fa-check-square-o': $ctrl.task.complete }"
+            <i class="cursor-pointer fa fa-2x" ng-class="{ 'fa-circle-o': !$ctrl.task.complete, 'fa-check-circle-o': $ctrl.task.complete }"
                 ng-click="$ctrl.task.complete = !$ctrl.task.complete" aria-hidden="true"></i>
                 <input class="SingleTaks-TaskName" ng-class="{'EditionInput' : !$ctrl.edition}" type="text" ng-model="$ctrl.task.taskName" ng-disabled="!$ctrl.edition">
         </p>
