@@ -24,9 +24,6 @@ input, .TaskGroupList-Tile > *, .TaskGroup-Task > *   {
     word-wrap: break-word;
 }
 
-.cursor-pointer {
-    cursor: pointer;
-}
 ul.uib-datepicker-popup.dropdown-menu {
     left: 0;
 }
