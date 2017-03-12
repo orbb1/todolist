@@ -1,38 +1,23 @@
 export const tasks = [
             {
-                taskName: 'Old task',
+                taskName: 'Call accountant',
                 taskId: 1,
                 group: 'Old Group',
                 create: 'today',
                 due: 'tomorrow',
                 priority: 'high',
-                person: 'Bauyrzhan',
+                person: 'Maxim',
                 complete: false,
                 comments: [
                     {
-                        author: 'Bauyrzhan',
-                        comment: 'pozhrat kazy'
-                    }
-                ]
-            }, {
-                taskName: 'Very Old task',
-                taskId: 2,
-                group: 'New Group',
-                create: 'today',
-                due: 'tomorrow',
-                priority: 'high',
-                person: 'Bauyrzhan',
-                complete: false,
-                comments: [
-                    { 
-                        author: 'Bauyrzhan',
-                        comment: 'pozhrat samsa' 
+                        author: 'Maxim',
+                        comment: 'dont forget to leave comment'
                     }
                 ]
             }, {
                 taskName: 'New task',
-                taskId: 3,
-                group: 'New Group',
+                taskId: 2,
+                group: 'Old Group',
                 create: 'today',
                 due: 'tomorrow',
                 priority: 'high',
@@ -47,4 +32,4 @@ export const tasks = [
             }
         ];
 
-export const taskGroups = ['Old Group', 'New Group'];
+export const taskGroups = ['Old Group'];
