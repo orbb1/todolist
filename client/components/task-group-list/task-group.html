@@ -39,13 +39,12 @@
                     </label>
                 </div>
                 <div class="col-sm-12">
-                    <label>Due date:
-                        <i class="fa fa-calendar cursor-pointer" ng-click="$ctrl.opened = !$ctrl.opened" aria-hidden="true"></i>
-                        <input class="form-control" type="text"
-                            uib-datepicker-popup ng-model="newTask.due"
-                            is-open="$ctrl.opened"
-                            alt-input-formats="altInputFormats">
-                            </label>
+                    <p><strong>Due date:</strong> {{newTask.due | date:'fullDate'}}</p>
+                    <p><i class="fa fa-calendar fa-2x cursor-pointer" 
+                        ng-click="$ctrl.opened = !$ctrl.opened" aria-hidden="true"></i>
+                    </p>
+                    <div uib-datepicker-popup ng-model="newTask.due" is-open="$ctrl.opened" alt-input-formats="altInputFormats">
+                    </div>
                     <label>Priority:
                     <select class="form-control" ng-model="newTask.priority">
                         <option>high</option>
