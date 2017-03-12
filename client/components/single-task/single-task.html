@@ -4,6 +4,11 @@
         <div class="EditButton">
             <button class="btn btn-danger" ng-click="$ctrl.edition = !$ctrl.edition">Edit</button>
         </div>
+        <div class="row">
+            <div class="col-xs-2 NavigateBack-Icon">
+            <i class="fa fa-angle-left fa-3x cursor-pointer" ui-sref="app.home" aria-hidden="true"></i>
+            </div>
+        </div>
         <div>
         <i class="Complete-Icon cursor-pointer fa fa-2x" ng-class="{ 'fa-circle-o': !$ctrl.task.complete, 'fa-check-circle-o': $ctrl.task.complete }" 
                     ng-click="$ctrl.task.complete = !$ctrl.task.complete" aria-hidden="true"></i>
