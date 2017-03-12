@@ -1,15 +1,15 @@
 <div class="container">
-    <div class="SingleTaks-TaskContainer">
-        <div>
-            <button class="btn btn-danger pull-right" ng-click="$ctrl.edition = !$ctrl.edition">Edit</button>
+    <div class="row">
+    <div class="SingleTaks-TaskContainer col-sm-6 col-sm-offset-3">
+        <div class="EditButton">
+            <button class="btn btn-danger" ng-click="$ctrl.edition = !$ctrl.edition">Edit</button>
         </div>
-        <p>
-            <i class="cursor-pointer fa fa-2x" ng-class="{ 'fa-circle-o': !$ctrl.task.complete, 'fa-check-circle-o': $ctrl.task.complete }"
-                ng-click="$ctrl.task.complete = !$ctrl.task.complete" aria-hidden="true"></i>
-                <input class="SingleTaks-TaskName" ng-class="{'EditionInput' : !$ctrl.edition}" type="text" ng-model="$ctrl.task.taskName" ng-disabled="!$ctrl.edition">
-        </p>
-        <div class="row">
-            <div class="col-sm-5">
+        <i class="Complete-Icon cursor-pointer fa fa-2x" ng-class="{ 'fa-circle-o': !$ctrl.task.complete, 'fa-check-circle-o': $ctrl.task.complete }" 
+                    ng-click="$ctrl.task.complete = !$ctrl.task.complete" aria-hidden="true"></i>
+            <textarea class="SingleTaks-TaskName" ng-class="{'EditionInput' : !$ctrl.edition, 'text-success' : $ctrl.task.complete  }" type="text" ng-model="$ctrl.task.taskName" ng-disabled="!$ctrl.edition">
+            </textarea>
+        <div>
+            <div>
                 <p>Create: <strong>{{$ctrl.task.create}}</strong></p>
                 <p>Due to: <strong>{{$ctrl.task.due | date:'fullDate'}}</strong></p>
                 <p>Priority: <strong>{{$ctrl.task.priority}}</strong></p>
@@ -18,7 +18,7 @@
                     <input ng-class="{'EditionInput' : !$ctrl.edition}" type="text" ng-model="$ctrl.task.person" ng-disabled="!$ctrl.edition">
                 </p>
             </div>
-            <div class="col-sm-7 row" ng-if="$ctrl.edition">
+            <div class="row" ng-if="$ctrl.edition">
                 <div class="col-sm-6"> 
                     <label for="priority">Set priority:</label>
                     <select class="form-control" id="priority" ng-model="$ctrl.task.priority">
@@ -54,5 +54,6 @@
             <p>Comment: <input type="text" ng-model="commentText"></p>
             <button class="btn btn-primary" ng-click="$ctrl.addComent(commentAuthor, commentText)">Submit</button>
         </div>
+    </div>
     </div>
 </div>

@@ -26,6 +26,7 @@ class HomeController {
             priority: newTodo.priority,
             complete: false,
             create: today,
+            comments: [],
             group: taskGroup, 
             taskId: this.getNewId()
         });

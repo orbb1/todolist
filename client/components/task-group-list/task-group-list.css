@@ -1,5 +1,6 @@
 .TaskGroup-GroupName {
-    color: dodgerblue;
+    font-family: 'Roboto', sans-serif;
+    color: #035c66 ;
     font-size: xx-large;
     word-wrap: break-word;
 }
@@ -18,6 +19,7 @@ input, .TaskGroupList-Tile > *, .TaskGroup-Task > *   {
 }
 
 .TaskGroup-TaskName {
+    font-family: 'Roboto', sans-serif;
     margin: 10px;
     font-size: 2em;
     word-wrap: break-word;

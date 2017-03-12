@@ -1,6 +1,4 @@
 .SingleTaks-TaskContainer {
-    width: 600px;
-    margin: auto;
     background-color: #f3ff9c;
     box-shadow: 0 0 10px dimgrey;
     border-radius: 5px;
@@ -8,11 +6,13 @@
 }
 
 .SingleTaks-TaskName {
-    margin-left: 10px;
-    font-size: 2em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    width: 250px;
 }
 
 .EditionInput {
+    width: 200px;
     border: none;
     background: transparent;
 }
@@ -25,4 +25,16 @@
 
 .DatePicker {
     margin-top: 15px;
+}
+
+.EditButton {
+    position: absolute;
+    z-index: 1010;
+    right: 3%;
+    bottom: 15px;
+    box-shadow: 0 0 5px dimgrey;
+}
+
+.Complete-Icon {
+    vertical-align: top;
 }
