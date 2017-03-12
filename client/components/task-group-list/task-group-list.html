@@ -1,14 +1,18 @@
 <h2>task list</h2>
 <div class="row">
         <task-group ng-repeat="taskGroup in $ctrl.taskGroups track by $index" 
-        get-new-id="$ctrl.getNewId()"
-        add-task="$ctrl.addTask" 
-        task-groups="$ctrl.taskGroups" task-group="taskGroup"
+                get-new-id="$ctrl.getNewId()"
+                add-task="$ctrl.addTask" 
+                task-groups="$ctrl.taskGroups" 
+                task-group="taskGroup"
+                new-task="$ctrl.newTask"
+                delete-task="$ctrl.deleteTask"
+                delete-group="$ctrl.deleteGroup"
                 tasks="$ctrl.tasks"></task-group>
                 <div class="TaskGroupList-Tile col-sm-3">
                         <div class="TaskGroup-NewGroupForm" ng-if="$ctrl.showInput">
-                                <input type="text" class="form-control" ng-maxlength="20" ng-model="newGroupName" placeholder="Name of the new group">
-                                <button class="btn btn-primary" ng-click="$ctrl.taskGroups.push(newGroupName)">Add</button>
+                                <input type="text" class="form-control" ng-model="newGroupName" placeholder="Name of the new group">
+                                <button class="btn btn-primary" ng-click="$ctrl.taskGroups.push(newGroupName); $ctrl.showInput = !$ctrl.showInput">Add</button>
                         </div>
                         <button class="btn btn-primary" ng-click="$ctrl.showInput = !$ctrl.showInput">New group</button>
                 </div>

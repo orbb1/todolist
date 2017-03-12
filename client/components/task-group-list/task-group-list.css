@@ -1,5 +1,7 @@
 .TaskGroup-GroupName {
-    color: cadetblue;
+    color: dodgerblue;
+    font-size: xx-large;
+    word-wrap: break-word;
 }
 
 .TaskGroupList-Tile {
@@ -24,4 +26,7 @@ input, .TaskGroupList-Tile > *, .TaskGroup-Task > *   {
 
 .cursor-pointer {
     cursor: pointer;
+}
+ul.uib-datepicker-popup.dropdown-menu {
+    left: 0;
 }

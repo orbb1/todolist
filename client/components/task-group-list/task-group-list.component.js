@@ -8,7 +8,10 @@ let taskGroupListComponent = {
         move: '=',
         tasks: '=',
         getNewId: '&',
-        addTask: '='
+        addTask: '=',
+        newTask: '=',
+        deleteTask: '=',
+        deleteGroup: '='
     }
 };
 
