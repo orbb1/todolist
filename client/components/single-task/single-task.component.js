@@ -7,7 +7,8 @@ let singleTaskComponent = {
         task: '=',
         addComent: '=',
         priorities: '<',
-        taskGroups: '<'
+        taskGroups: '<',
+        changeTasktitle: '='
     }
 }
 

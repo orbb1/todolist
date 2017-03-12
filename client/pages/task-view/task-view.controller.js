@@ -1,6 +1,8 @@
 class TaskViewController {
     constructor() {
         this.priorities = ['high', 'middle', 'low']
+        
+        this.changeTasktitle = this.changeTasktitle.bind(this);
         this.addComent = this.addComent.bind(this);
     }
     addComent = (comAuthor, comText) => {
@@ -8,6 +10,14 @@ class TaskViewController {
             author: comAuthor,
             comment: comText
         })
+    };
+
+    changeTasktitle = (newtodoTitle) => {
+        if (newtodoTitle) {
+            this.task.taskName = newtodoTitle;
+        }
+
+        return this.task.taskName;
     }
 }
 
