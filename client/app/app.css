@@ -6,14 +6,15 @@
 */
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700');
 
 body {
     margin-left: calc(100vw - 100%);
     height: 100vh;
-    background: no-repeat center #7ae2cf;
-background: no-repeat center -webkit-linear-gradient(bottom left, #7ae2cf 0%, #48bace 40%, #035c66 100%) fixed;
-background: no-repeat center -o-linear-gradient(bottom left, #7ae2cf 0%, #48bace 40%, #035c66 100%) fixed;
-background: no-repeat center linear-gradient(to top right, #7ae2cf 0%, #48bace 40%, #035c66 100%) fixed;
+    background: no-repeat center #17282b;
+background: no-repeat center -webkit-linear-gradient(bottom left, #080808 0%, #17282b 40%, #035c66 100%) fixed;
+background: no-repeat center -o-linear-gradient(bottom left, #080808 0%, #17282b 40%, #035c66 100%) fixed;
+background: no-repeat center linear-gradient(to top right, #080808 0%, #17282b 40%, #035c66 100%) fixed;
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7ae2cf', endColorstr='#035c66',GradientType=1 ) fixed;
 }
 

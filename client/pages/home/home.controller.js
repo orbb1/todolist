@@ -5,6 +5,7 @@ class HomeController {
         this.scope.newTaskForm = {};
         this.newTask;
         this.showNewTaskInput = false;
+        this.headerTitle = 'Maxello';
 
         this.getNewId = this.getNewId.bind(this);
         this.addTask = this.addTask.bind(this);
