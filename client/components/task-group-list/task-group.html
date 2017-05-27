@@ -1,31 +1,32 @@
 <div class="col-sm-3 TaskGroupList-Tile">
     <div class="row TaskGroup-Header">
         <div class="col-xs-10"><span class="TaskGroup-GroupName">{{$ctrl.taskGroup}}</span></div>
-        <div class="col-xs-2">
-            <i class="fa fa-trash fa-2x text-danger pull-right cursor-pointer" ng-click="$ctrl.deleteGroup($ctrl.taskGroup)" aria-hidden="true"></i>
+        <div class="col-xs-2 TaskGroup-remove">
+            <i class="fa fa-trash u-icon pull-right cursor-pointer" ng-click="$ctrl.deleteGroup($ctrl.taskGroup)" aria-hidden="true"></i>
         </div>
     </div>
-    <hr>
     <div class="TaskGroup-Task" ng-repeat="task in $ctrl.tasks | filter: { group: $ctrl.taskGroup } track by $index">
         <div>
-            <p>
-                <i class="cursor-pointer fa fa-2x" ng-class="{ 'fa-circle-o': !task.complete, 'fa-check-circle-o': task.complete }" ng-click="task.complete = !task.complete"
+            <p class="u-icon">
+                <i class="cursor-pointer fa" ng-class="{ 'fa-circle-o': !task.complete, 'fa-check-circle-o': task.complete }" ng-click="task.complete = !task.complete"
                     aria-hidden="true"></i>
                     <span class="TaskGroup-TaskName cursor-pointer" ng-class="{'text-muted' : task.complete}" ui-sref="app.task({id:task.taskId})">{{task.taskName}}</span>
             </p>
         </div>
-        <div class="row">
+        <div class="row TaskGroup-TaskDescr">
             <div class="col-sm-6">
                 <label>Move to:</label>
                 <select class="form-control" ng-model="task.group">
                     <option ng-repeat="taskGroup in $ctrl.taskGroups">{{taskGroup}}</option>
                 </select>
             </div>
+            <div class="col-sm-6">
+                <i class="fa fa-trash u-icon pull-right cursor-pointer" 
+                    ng-click="$ctrl.deleteTask(task)" aria-hidden="true"></i>
+            </div>
         </div>
-        <i class="fa fa-trash fa-2x text-danger cursor-pointer" ng-click="$ctrl.deleteTask(task)" aria-hidden="true"></i>
         <!--commetns indicator-->
         <!--<i ng-if="task.comments.length" class="fa fa-comments" aria-hidden="true"></i>-->
-        <hr>
     </div>
     <div ng-if="$ctrl.showNewTaskInput">
         <form name="newTaskForm" ng-submit="$ctrl.addTask(newTask, $ctrl.taskGroup); $ctrl.showNewTaskInput = !$ctrl.showNewTaskInput">
