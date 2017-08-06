@@ -8,10 +8,12 @@
                 delete-task="$ctrl.deleteTask"
                 delete-group="$ctrl.deleteGroup"
                 tasks="$ctrl.tasks"></task-group>
-                <div class="TaskGroupList-Tile col-sm-3">
+                <div class="TaskGroupList-Tile col-sm-4 col-md-3">
                         <div class="TaskGroup-NewGroupForm" ng-if="$ctrl.showInput">
-                                <input type="text" class="form-control" ng-model="newGroupName" placeholder="Name of the new group">
-                                <button class="btn btn-primary" ng-click="$ctrl.taskGroups.push(newGroupName); $ctrl.showInput = !$ctrl.showInput">Add</button>
+                                <form name="newGroup" ng-submit="$ctrl.taskGroups.push(newGroupName); $ctrl.showInput = !$ctrl.showInput">
+                                        <input name="newGroup" required type="text" class="form-control" minlength="3" ng-model="newGroupName" placeholder="Min 3 letters">
+                                        <button class="btn btn-primary" type="submit">Add</button>
+                                </form>
                         </div>
                         <button class="btn btn-primary" ng-click="$ctrl.showInput = !$ctrl.showInput">New group</button>
                 </div>

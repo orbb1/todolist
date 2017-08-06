@@ -1,3 +1,7 @@
+.row {
+    margin: 0;
+}
+
 .TaskGroupList-Tile {
     background-color: #fff;
     padding: 10px 0;
