@@ -1,35 +1,55 @@
-.SingleTaks-TaskContainer {
+.SingleTask {
     -webkit-transition: background-color 1s;
     transition: background-color 1s;
     padding: 15px;
     margin-bottom: 25px;
 }
 
-.SingleTaks-TaskContainer.completed {
-    background-color: lightcyan;
+.SingleTask.completed {
+    background-color: #E6FFFF;
 }
 
-.SingleTaks-TaskContainer.uncompleted {
-    background-color: lightyellow;
+.SingleTask.uncompleted {
+    background-color: #FFF2EA;
 }
 
-.NavigateBack-Icon {
-    margin-bottom: 10px;
+.SingleTask input[type="text"], 
+.SingleTask select, 
+.SingleTask textarea, 
+.SingleTask button {
+    border-radius: 0;
 }
 
-.SingleTask-Name {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.5em;
+.Btn-back {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    transition: background-color 5s ease-in;
 }
 
-.EditionInput {
+.Btn-back:hover {
+    background-color: #888;
+}
+
+
+.Task-header {
+    margin: 10px 0;
+    font-size: 2rem;
+}
+
+.Person-input:disabled {
     border: none;
     background: transparent;
+    font-weight: bold;
 }
 
-.SingleTask-CommentBox {
+.Comment {
     padding: 10px;
     background-color: lightgray;
+}
+
+.Task--edition {
+    border: 1px solid #888;
 }
 
 .DatePicker {
@@ -48,15 +68,10 @@
     vertical-align: top;
 }
 
-.SingleTask-Name {
-    -webkit-transition: color 500ms;
-    transition: color 500ms;
-}
-
-.NewComment-Wrapper {
+.NewComment {
     margin: 5px 0;
 }
 
-textarea {
+.Name-input--edition {
     resize: none;
 }

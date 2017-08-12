@@ -46,8 +46,8 @@ export const tasks = [
                 ]
             },  {
                 taskName: 'Do nothing',
-                taskId: 3,
-                group: 'lazy Group',
+                taskId: 4,
+                group: 'Lazy Group',
                 create: 'today',
                 due: 'tomorrow',
                 priority: 'low',
@@ -57,4 +57,4 @@ export const tasks = [
             }
         ];
 
-export const taskGroups = ['Old Group', 'lazy Group'];
+export const taskGroups = ['Old Group', 'Lazy Group'];

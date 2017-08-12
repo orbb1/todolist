@@ -1,11 +1,12 @@
-<div class="col-sm-4 col-md-3 tile">
+<div class="col-sm-6 col-md-4">
+    <div class="tile">
     <div class="Group-header">
         <h3 class="Group-name">{{$ctrl.taskGroup}}</h1>
     </div>
     <ol class="Task-list">
-        <li class="Task" ng-repeat="task in $ctrl.tasks | filter: { group: $ctrl.taskGroup } track by $index">
+        <li class="Task" ng-class="[task.priority]" ng-repeat="task in $ctrl.tasks | filter: { group: $ctrl.taskGroup } track by $index">
             <p class="Task-name u-cursorPointer" ng-class="{'u-textCrossed' : task.complete}" ui-sref="app.task({id:task.taskId})">{{task.taskName}}</p>
-            <i class="fa fa-trash fa-lg u-cursorPointer" 
+            <i class="Task-remove-icon fa fa-trash fa-lg u-cursorPointer" 
                 ng-click="$ctrl.deleteTask(task)" aria-hidden="true"></i>
         </li>
     </ol>
@@ -37,4 +38,5 @@
         <button class="btn btn-default" ng-click="$ctrl.showNewTaskInput = !$ctrl.showNewTaskInput">New task</button>
         <button class="btn btn-default" ng-click="$ctrl.deleteGroup($ctrl.taskGroup)">Delete group</button>
     </div>
+</div>
 </div>

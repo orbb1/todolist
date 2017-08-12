@@ -25,15 +25,15 @@
 }
 
 .tile {
-    border-bottom: 10px solid #888;
     color: #000;
     word-wrap: break-word;
     font-family: 'Roboto', sans-serif;
-    padding: 0; 
+    padding: 0 0 5px 0;
+    border-bottom: 7px solid #888;
 }
 
 .form {
-    margin: 15px 0;
+    margin: 5px 0 0;
 }
 
 .form > * {
