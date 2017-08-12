@@ -1,20 +1,44 @@
 .Group-header {
-    text-align: justify; 
+    text-align: justify;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    word-wrap: break;
 }
 
-.Group-header::after {
-    content: '';
+.Group-name {
+    margin: 10px 15px;
+}
+
+.Task-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.Task {
+    margin: 10px 0;
+    border-bottom: 1px dashed #888;
+    padding: 0 15px;
+}
+
+.Task-name {
     display: inline-block;
-    width: 100%;
-    height: 0;
-    font-size: 0;
-    line-height: 0;
+    width: 90%;
+    font-size: 1.5rem;
 }
 
-.Group-header > * {
-  display: inline-block;
+.Task-name::first-line {
+    font-weight: bold;
 }
 
-.Group-icon {
-  vertical-align: super;
+.Group-controls {
+    padding: 0 15px;
+    margin: 5px 0;
+}
+
+.Group-controls > button {
+    border-radius: 0;
+}
+
+#priority-select {
+    border-radius: 0;
 }

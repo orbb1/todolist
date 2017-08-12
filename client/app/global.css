@@ -13,6 +13,10 @@
     cursor: pointer;
 }
 
+.u-textCrossed {
+    text-decoration: line-through;
+}
+
 /*
 //Global styles
 */
@@ -24,7 +28,8 @@
     border-bottom: 10px solid #888;
     color: #000;
     word-wrap: break-word;
-    font-family: 'Roboto', sans-serif;  
+    font-family: 'Roboto', sans-serif;
+    padding: 0; 
 }
 
 .form {

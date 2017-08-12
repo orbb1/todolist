@@ -1,64 +1,40 @@
 <div class="col-sm-4 col-md-3 tile">
     <div class="Group-header">
-        <h3 class="Group-name">{{$ctrl.taskGroup}}</h3>
-        <div class="Group-icon">
-            <i class="fa fa-trash u-cursorPointer" ng-click="$ctrl.deleteGroup($ctrl.taskGroup)" aria-hidden="true"></i>
-        </div>
+        <h3 class="Group-name">{{$ctrl.taskGroup}}</h1>
     </div>
-    <div class="Task" ng-repeat="task in $ctrl.tasks | filter: { group: $ctrl.taskGroup } track by $index">
-        <div>
-            <p class="u-icon">
-                <i class="cursor-pointer fa" ng-class="{ 'fa-circle-o': !task.complete, 'fa-check-circle-o': task.complete }" ng-click="task.complete = !task.complete"
-                    aria-hidden="true"></i>
-                    <span class="TaskGroup-TaskName cursor-pointer" ng-class="{'text-muted' : task.complete}" ui-sref="app.task({id:task.taskId})">{{task.taskName}}</span>
-            </p>
-        </div>
-        <div class="row TaskGroup-TaskDescr">
-            <div class="col-sm-6">
-                <label>Move to:</label>
-                <select class="form-control" ng-model="task.group">
-                    <option ng-repeat="taskGroup in $ctrl.taskGroups">{{taskGroup}}</option>
+    <ol class="Task-list">
+        <li class="Task" ng-repeat="task in $ctrl.tasks | filter: { group: $ctrl.taskGroup } track by $index">
+            <p class="Task-name u-cursorPointer" ng-class="{'u-textCrossed' : task.complete}" ui-sref="app.task({id:task.taskId})">{{task.taskName}}</p>
+            <i class="fa fa-trash fa-lg u-cursorPointer" 
+                ng-click="$ctrl.deleteTask(task)" aria-hidden="true"></i>
+        </li>
+    </ol>
+    <div ng-if="$ctrl.showNewTaskInput">
+        <form class="form" name="newTaskForm" ng-submit="$ctrl.addTask(newTask, $ctrl.taskGroup); $ctrl.showNewTaskInput = !$ctrl.showNewTaskInput">
+            <label for="taskname-texarea">Title:</label>
+            <textarea id="taskname-texarea" class="form-control" type="text" ng-model="newTask.taskName" required>
+            </textarea>
+            <label for="person-input">Person assingned:</label>
+            <input id="person-input" class="form-control" type="text" ng-model="newTask.person">
+            <div>
+                <p><strong>Due date:</strong> {{newTask.due | date:'fullDate'}}</p>
+                <p><i class="fa fa-calendar fa-2x cursor-pointer" 
+                    ng-click="$ctrl.opened = !$ctrl.opened" aria-hidden="true"></i>
+                </p>
+                <div uib-datepicker-popup ng-model="newTask.due" is-open="$ctrl.opened" alt-input-formats="altInputFormats">
+                </div>
+                <label for="priority-select">Priority:</label>
+                <select id="priority-select" class="form-control" ng-model="newTask.priority">
+                    <option>high</option>
+                    <option>middle</option>
+                    <option>low</option>
                 </select>
             </div>
-            <div class="col-sm-6">
-                <i class="fa fa-trash u-icon pull-right cursor-pointer" 
-                    ng-click="$ctrl.deleteTask(task)" aria-hidden="true"></i>
-            </div>
-        </div>
-        <!--commetns indicator-->
-        <!--<i ng-if="task.comments.length" class="fa fa-comments" aria-hidden="true"></i>-->
-    </div>
-    <div ng-if="$ctrl.showNewTaskInput">
-        <form name="newTaskForm" ng-submit="$ctrl.addTask(newTask, $ctrl.taskGroup); $ctrl.showNewTaskInput = !$ctrl.showNewTaskInput">
-            <div class="row">
-                <div class="col-sm-12">
-                    <label>Title:
-                        <textarea class="form-control" type="text" ng-model="newTask.taskName" required>
-                        </textarea>
-                    </label>
-                    <label>Person assingned:
-                        <input class="form-control" type="text" ng-model="newTask.person">
-                    </label>
-                </div>
-                <div class="col-sm-12">
-                    <p><strong>Due date:</strong> {{newTask.due | date:'fullDate'}}</p>
-                    <p><i class="fa fa-calendar fa-2x cursor-pointer" 
-                        ng-click="$ctrl.opened = !$ctrl.opened" aria-hidden="true"></i>
-                    </p>
-                    <div uib-datepicker-popup ng-model="newTask.due" is-open="$ctrl.opened" alt-input-formats="altInputFormats">
-                    </div>
-                    <label>Priority:
-                    <select class="form-control" ng-model="newTask.priority">
-                        <option>high</option>
-                        <option>middle</option>
-                        <option>low</option>
-                    </select>
-                    </label>
-                    <hr>
-                </div>
-            </div>
-            <button class="btn btn-primary" type="submit">Add</button>
+            <button class="btn btn-default" type="submit">Add</button>
         </form>
     </div>
-    <button class="btn btn-primary" ng-click="$ctrl.showNewTaskInput = !$ctrl.showNewTaskInput">New task</button>
+    <div class="Group-controls">
+        <button class="btn btn-default" ng-click="$ctrl.showNewTaskInput = !$ctrl.showNewTaskInput">New task</button>
+        <button class="btn btn-default" ng-click="$ctrl.deleteGroup($ctrl.taskGroup)">Delete group</button>
+    </div>
 </div>
