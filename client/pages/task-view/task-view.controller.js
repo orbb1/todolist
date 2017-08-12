@@ -1,7 +1,6 @@
 class TaskViewController {
     constructor() {
         this.priorities = ['high', 'middle', 'low'];
-        this.headerTitle = 'Maxello';
         
         this.changeTasktitle = this.changeTasktitle.bind(this);
         this.addComent = this.addComent.bind(this);

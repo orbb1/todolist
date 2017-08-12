@@ -1,11 +1,11 @@
-<div class="col-sm-4 col-md-3 TaskGroupList-Tile">
-    <div class="row TaskGroup-Header">
-        <div class="col-xs-10"><span class="TaskGroup-GroupName">{{$ctrl.taskGroup}}</span></div>
-        <div class="col-xs-2 TaskGroup-remove">
-            <i class="fa fa-trash u-icon pull-right cursor-pointer" ng-click="$ctrl.deleteGroup($ctrl.taskGroup)" aria-hidden="true"></i>
+<div class="col-sm-4 col-md-3 tile">
+    <div class="Group-header">
+        <h3 class="Group-name">{{$ctrl.taskGroup}}</h3>
+        <div class="Group-icon">
+            <i class="fa fa-trash u-cursorPointer" ng-click="$ctrl.deleteGroup($ctrl.taskGroup)" aria-hidden="true"></i>
         </div>
     </div>
-    <div class="TaskGroup-Task" ng-repeat="task in $ctrl.tasks | filter: { group: $ctrl.taskGroup } track by $index">
+    <div class="Task" ng-repeat="task in $ctrl.tasks | filter: { group: $ctrl.taskGroup } track by $index">
         <div>
             <p class="u-icon">
                 <i class="cursor-pointer fa" ng-class="{ 'fa-circle-o': !task.complete, 'fa-check-circle-o': task.complete }" ng-click="task.complete = !task.complete"

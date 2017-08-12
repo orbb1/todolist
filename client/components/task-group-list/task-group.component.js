@@ -1,4 +1,5 @@
 import template from './task-group.html';
+import './task-group.css';
 
 let taskGroupComponent = {
     template,
