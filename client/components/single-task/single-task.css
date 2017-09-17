@@ -31,7 +31,6 @@
     background-color: #888;
 }
 
-
 .Task-header {
     margin: 10px 0;
     font-size: 2rem;
@@ -46,10 +45,6 @@
 .Comment {
     padding: 10px;
     background-color: lightgray;
-}
-
-.Task--edition {
-    border: 1px solid #888;
 }
 
 .DatePicker {

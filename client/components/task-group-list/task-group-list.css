@@ -1,11 +1,8 @@
+.form {
+    padding: 0 20px;
+}
+
 .form.add-group {
     padding: 0 15px;
     margin: 0;
-}
-
-@media screen and (max-width: 767px) {
-    .container, .column {
-        padding-left: 0;
-        padding-right: 0;
-    }
 }

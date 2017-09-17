@@ -53,6 +53,16 @@
 }
 
 /* 
+//Media
+*/
+@media screen and (max-width: 767px) {
+    .container, .column {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* 
 //Animations 
 */
 @keyframes invalid-input-border {

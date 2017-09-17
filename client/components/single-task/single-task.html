@@ -23,8 +23,8 @@
                         <input class="Person-input" type="text" ng-model="$ctrl.task.person" ng-disabled="!$ctrl.edition">
                     </p>
                 </div>
-                <div class="row Task--edition" ng-if="$ctrl.edition">
-                    <div class="col-sm-12">
+                <div class="row" ng-if="$ctrl.edition">
+                    <div class="col-sm-12 column">
                         <p><strong>New task title (can't be blank):</strong></p>
                         <textarea class="Name-input--edition form-control"
                         ng-minlength="3"
@@ -32,19 +32,19 @@
                         type="text" ng-model="newTaskName" ng-if="$ctrl.edition">
                         </textarea>
                     </div>
-                    <div class="col-sm-6"> 
+                    <div class="col-sm-6 column"> 
                         <label for="priority">Set priority:</label>
                         <select class="form-control" id="priority" ng-model="$ctrl.task.priority">
                             <option ng-repeat="priorityLevel in $ctrl.priorities">{{priorityLevel}}</option>
                         </select>
                     </div>
-                <div class="col-sm-6">
+                <div class="col-sm-6 column">
                     <label for="group">Change group</label>
                     <select class="form-control" id="group" ng-model="$ctrl.task.group">
                         <option ng-repeat="group in $ctrl.taskGroups">{{group}}</option>
                     </select>
                     </div>
-                    <div class="DatePicker col-sm-12">
+                    <div class="DatePicker col-sm-12 column">
                         <p>Change due date: </p>
                         <div uib-datepicker ng-model="$ctrl.task.due"></div>
                     </div>
@@ -59,8 +59,12 @@
                     <i class="fa fa-comments" aria-hidden="true"></i>
                 </button>
             <form name="com-form" ng-submit="$ctrl.addComent(commentAuthor, commentText)" class="NewComment form" ng-if="$ctrl.toComment">
-                <label>Author: <input name="com-author" class="text-input" ng-minlength="3" ng-required type="text" ng-model="commentAuthor"/></label>
-                <label>Comment: <input name="com" class="text-input" ng-minlength="3" ng-required type="text" ng-model="commentText"/></label>
+                <label>
+                    <p>Author:</p> 
+                    <input name="com-author" class="form-control text-input" ng-minlength="3" ng-required type="text" ng-model="commentAuthor"/></label>
+                <label>
+                    <p>Comment:</p>
+                    <input name="com" class="form-control text-input" ng-minlength="3" ng-required type="text" ng-model="commentText"/></label>
                 <button class="btn btn-default" ng-disabled="com-form.$invalid" type="submit">Submit</button>
             </form>
         </div>
