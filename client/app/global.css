@@ -29,7 +29,10 @@
     word-wrap: break-word;
     font-family: 'Roboto', sans-serif;
     padding: 0 0 5px 0;
-    border-bottom: 7px solid #888;
+    background-color: #fff;
+    background-image: -webkit-linear-gradient(165deg, #7aa2a1 0, #fff 75px);
+    background-image: -moz-linear-gradient(165deg, #7aa2a1 0, #fff 75px);
+    background-image: linear-gradient(165deg, #7aa2a1 0, #fff 75px);
 }
 
 .form {
