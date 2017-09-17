@@ -1,9 +1,6 @@
 <div class="container">
     <div class="row">
         <div class="SingleTask col-sm-6 col-sm-offset-3" ng-class="$ctrl.task.complete ? 'completed' : 'uncompleted'">
-            <div class="EditButton">
-                <button class="btn btn-danger" ng-click="$ctrl.edition = !$ctrl.edition">Edit</button>
-            </div>
             <button class="btn btn-default Btn-back u-cursorPointer" ui-sref="app.home">
                 <i class="fa fa-chevron-left cursor-pointer" aria-hidden="true"></i>
                 Back to home page
@@ -67,6 +64,9 @@
                     <input name="com" class="form-control text-input" ng-minlength="3" ng-required type="text" ng-model="commentText"/></label>
                 <button class="btn btn-default" ng-disabled="com-form.$invalid" type="submit">Submit</button>
             </form>
+            <div class="EditButton">
+                <button class="btn btn-danger" ng-click="$ctrl.edition = !$ctrl.edition">Edit</button>
+            </div>
         </div>
     </div>
 </div>
